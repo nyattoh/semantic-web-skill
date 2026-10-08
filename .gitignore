@@ -1,0 +1,31 @@
+# Local credentials and private configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+secrets*.json
+# Generated dependencies, builds, test output, and caches
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/
+coverage/
+playwright-report/
+test-results/
+dist/
+build/
+*.log
+# Local editor and OS metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+.ruff_cache/
+# Historical source prompt: kept locally, not published (rights unconfirmed)
+docs/reference/web_spec.original.md

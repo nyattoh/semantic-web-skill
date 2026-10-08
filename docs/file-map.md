@@ -1,0 +1,79 @@
+# Actual starter file map
+
+This list describes supplied files. The larger tree in the product specification is planned; LICENSE, JSON schemas/profiles, executable scripts, demos, and CI are deliberately absent.
+
+```text
+semantic-web-skill/
+  .github/ISSUE_TEMPLATE/bug_report.md
+  .github/ISSUE_TEMPLATE/rule_proposal.md
+  .github/pull_request_template.md
+  .gitattributes
+  .github/workflows/README.md
+  .gitignore
+  CHANGELOG.md
+  CONTEXT.md
+  CONTRIBUTING.md
+  LICENSE
+  LICENSE-DOCS.txt
+  README.ja.md
+  README.md
+  docs/adr/0001-split-license-mit-code-cc-by-docs.md
+  docs/adr/0002-legal-judgment-is-an-advisory-finding.md
+  docs/adr/0003-design-comp-centered-workflows.md
+  docs/architecture.md
+  docs/chat-handover.ja.md
+  docs/compatibility.md
+  docs/file-map.md
+  docs/github-setup.ja.md
+  docs/handover.md
+  docs/product-spec.ja.md
+  docs/reference/README.md
+  docs/rule-authoring.md
+  docs/starter-status.md
+  docs/support-policy.md
+  examples/README.md
+  examples/faq-and-testimonials/README.md
+  examples/navigation/README.md
+  examples/regional-claims/README.md
+  examples/semantic-comparison/README.md
+  profiles/README.md
+  rules/README.md
+  rules/accessibility/README.md
+  rules/compliance/README.md
+  rules/compliance/eu/README.md
+  rules/compliance/jp/README.md
+  rules/compliance/uk/README.md
+  rules/compliance/us/README.md
+  rules/css/README.md
+  rules/html/README.md
+  rules/interactions/README.md
+  rules/responsive/README.md
+  rules/search/README.md
+  rules/verification/README.md
+  schemas/README.md
+  scripts/README.md
+  skills/accessibility/SKILL.md
+  skills/accessibility/references/manual-checks.md
+  skills/css-foundations/SKILL.md
+  skills/css-foundations/references/layout-and-units.md
+  skills/evidence-reporting/SKILL.md
+  skills/evidence-reporting/references/report-format.md
+  skills/native-interactions/SKILL.md
+  skills/native-interactions/references/navigation.md
+  skills/regional-compliance/SKILL.md
+  skills/regional-compliance/references/applicability.md
+  skills/responsive-verification/SKILL.md
+  skills/responsive-verification/references/device-testing.md
+  skills/search-content/SKILL.md
+  skills/search-content/references/provider-checks.md
+  skills/semantic-html/SKILL.md
+  skills/semantic-html/references/content-models.md
+  skills/semantic-html/references/content-patterns.md
+  skills/semantic-web/SKILL.md
+  skills/semantic-web/references/workflow.md
+  tests/README.md
+  tests/evaluations/README.md
+  tests/fixtures/README.md
+  tests/integration/README.md
+  tests/rules/README.md
+```
