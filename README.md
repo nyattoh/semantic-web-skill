@@ -1,40 +1,65 @@
 # semantic-web-skill
 
-A documentation-first starter for a modular web-quality skill collection.
+[日本語（プロジェクトのメインガイド）](README.ja.md)
 
-**Status: pre-implementation draft, not a validated or released skill package.** Snapshot: 2026-10-08 UTC. The preserved Japanese specification is dated 2026-10-09 in Japan. Hosted at <https://github.com/nyattoh/semantic-web-skill>.
+**From design comps to semantic HTML. From briefs to semantically informed design comps.**
 
-[日本語](README.ja.md) · [Product specification](docs/product-spec.ja.md) · [Current status](docs/starter-status.md) · [Architecture](docs/architecture.md)
+An open project to help spread meaningful, semantic HTML source code. It aims to connect visual design and document meaning, so developers can consider content, interaction, accessibility, and intended markets whether they are translating a design into code or creating a design from a brief.
 
-## What is here
+[日本語版](README.ja.md) · [Product specification](docs/product-spec.ja.md) · [Current status](docs/starter-status.md) · [Contributing](CONTRIBUTING.md)
 
-- The complete Japanese product specification, preserved byte-for-byte.
-- An entry skill and eight specialist SKILL.md drafts with focused reference guides.
-- Repository structure, contribution guidance, handover criteria, and a manual GitHub setup guide.
-- Design notes for rules, profiles, schemas, examples, and tests. These are plans, not executable implementations.
-- A summary of the points superseded from an earlier, unpublished source prompt.
+> **This repository is currently a starter containing design documents and draft skills.** It is not a completed audit tool, validated agent-skill distribution, or regional rule pack. See [current status](docs/starter-status.md) for limitations.
 
-## Start here
+## Intended workflows
 
-1. Read the [product specification](docs/product-spec.ja.md) and [open decisions](docs/starter-status.md).
-2. Inspect [skills/semantic-web/SKILL.md](skills/semantic-web/SKILL.md) and only the relevant specialist drafts.
-3. Develop one traceable vertical slice: a sourced rule, representative fixtures, a real check, and an honest result.
-4. Record actual compatibility and test evidence before offering an installation method or release.
+### 1. Design comp to HTML
 
-Example development request:
+Use a design comp, content, technical constraints, and intended markets to choose appropriate HTML elements and content structure. Then implement the page and record checks actually run, along with unresolved questions. The goal is to produce meaningful source code, not only a visual match.
 
-> Read this repository as an unvalidated starter. Implement one semantic HTML rule with positive, negative, and boundary fixtures. Identify the applicable specification section, preserve the existing scope, and report the checks actually run.
+### 2. Brief to design comp
 
-Keep the whole repository together while reviewing it. Cross-folder references have not been validated in any agent installer; copying only an individual skill folder may break them. There is no supported installation command yet. See [compatibility](docs/compatibility.md).
+When no comp exists, clarify the purpose, audience, content, brand, interactions, and intended markets. Shape the design with semantic structure in mind: content groups, headings, interaction targets and states, and responsive changes. This should give the later HTML implementation a sound starting point.
 
-## Planned scope
+### 3. Review an existing site
 
-Semantic HTML, CSS foundations, native interactions, accessibility, responsive and real-device verification, search content, regional applicability, and evidence reporting. No automatic audit engine, test runner, CI, or regional rule pack is implemented. No search ranking, AI citation, accessibility conformance, or legal compliance is guaranteed.
+Inspect its code, rendered pages, and interactions. Report improvement opportunities with sources and actual verification results. A review request does not authorise code changes or publication by itself.
 
-[File map](docs/file-map.md) · [Rule authoring](docs/rule-authoring.md) · [Support policy](docs/support-policy.md) · [Handover](docs/handover.md) · [Contributing](CONTRIBUTING.md)
+These three paths reflect the accepted [design decision, ADR 0003](docs/adr/0003-design-comp-centered-workflows.md). The entry skill now describes all three paths as draft guidance. The product specification remains preserved; its amendment is recorded in [current status](docs/starter-status.md). Input formats (such as images or Figma), agent-specific execution, and runtime behaviour remain undecided or unvalidated.
 
-## Publishing and licensing
+## Using this repository today
 
-[Manual GitHub setup (Japanese)](docs/github-setup.ja.md) is a reviewed command guide, not an executed setup. Review the account, destination, staged files, public visibility, and commit identity yourself before publishing.
+For now, use the repository as a set of design documents. There is no installer or automatic execution.
 
-Code, schemas, rule data and tests are under the [MIT License](LICENSE). Prose documentation is under [CC BY 4.0](LICENSE-DOCS.txt). The exact scope is at the top of [LICENSE-DOCS.txt](LICENSE-DOCS.txt).
+1. Read [current status and open decisions](docs/starter-status.md).
+2. Read the [entry skill](skills/semantic-web/SKILL.md) and only the specialist drafts relevant to your task.
+3. If useful, provide the complete repository as context to a coding agent and ask it to use the drafts as guidance. Keep the repository together: cross-folder references may break if you copy a single file or skill.
+4. Review the result yourself. Ask the agent to distinguish checks it actually ran from checks it did not run.
+
+Example trial prompt:
+
+> This repository is an unvalidated starter. Read the entry skill and relevant references, and treat them as drafts. If a design comp is supplied, map its meaning to an HTML/CSS plan or implementation. If there is only a brief, create a semantically informed comp first when the available environment supports it, showing content groups, headings, controls, states, and responsive behaviour. Otherwise, provide a design specification with those details. Report checks actually run, their results, and unresolved points separately. Do not describe reading the skills as verified quality assurance.
+
+This trial is not a supported installation method and does not guarantee compatibility with any agent. Record only installation steps and support that have been tested in [compatibility](docs/compatibility.md).
+
+## Regions and languages
+
+The project aims to support as many regions as practical. Regional advertising, legal, and content requirements should be maintained as rule packs that state their market, product, medium, dates, authoritative sources, and human-review boundaries. No regional pack has been validated yet. The project does not guarantee coverage of unresearched markets or legal compliance. Contributions based on primary sources in local languages are welcome.
+
+## Join in
+
+The project aims to grow through real use, bug reports, and improvements to its rules, examples, and translations. Reaching 1,000 or more GitHub stars is one goal; sustained use, reuse, and contributions matter too.
+
+- Read the [contributing guide](CONTRIBUTING.md) and include the problem, evidence, and applicability of a proposal.
+- Rule proposals should include sources, applicability, positive, negative, and boundary cases, and false-positive risks.
+- Keep limitations and validation status aligned when translating documentation.
+- Do not publish third-party designs, text, or customer data without checking the relevant rights.
+
+## What exists today
+
+The repository contains draft entry and specialist skills, a specification, reference guides, and design notes. Structural checks do not validate skill behaviour or web quality.
+
+Executable audit rules, JSON schemas, a test runner, CI, an installer, working demo examples, and validated regional packs are not implemented. Agent, browser, and real-device support has not been validated. No accessibility conformance, search ranking, AI-search citations, or legal compliance is guaranteed.
+
+## Licence
+
+Code, data, and tests are under the [MIT Licence](LICENSE). Prose documentation is under [CC BY 4.0](LICENSE-DOCS.txt). Check both licences and the [licensing note](LICENSE-DOCS.txt) for their exact scope.
