@@ -71,6 +71,8 @@ semantic-web-skill/
   skills/semantic-html/references/content-patterns.md
   skills/semantic-web/SKILL.md
   skills/semantic-web/references/workflow.md
+  skills/semantic-web/references/comp-to-html.md
+  skills/semantic-web/references/brief-to-comp.md
   tests/README.md
   tests/evaluations/README.md
   tests/fixtures/README.md
