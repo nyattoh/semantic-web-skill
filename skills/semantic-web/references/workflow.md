@@ -68,7 +68,7 @@ Use one of the six states for each applicable requirement or proposed check, wit
 - `needs_review`: interpretation or a human decision remains; identify the reviewer role and question. Agent legal/provider-policy interpretations always use this state with sources and retrieval date.
 - `not_applicable`: the condition does not apply; state the applicability reason. Missing evidence or an unsupported market is not an applicability exemption.
 
-Where no implemented rule ID exists, reference the specification section or primary source and label the proposed check; do not invent an executable rule, schema, or automatic result. Keep exceptions separate from observed failures. A market without a declared regional pack is unsupported; this starter has no validated pack. Research for additional markets can produce a scoped advisory finding, not a claim of validated regional support.
+Where no implemented rule ID exists, reference the specification section or primary source and label the proposed check; do not invent an executable rule, schema, or automatic result. Keep exceptions separate from observed failures. Regional compliance coverage without a validated regional pack is unsupported; this starter has no validated pack. Separately scoped semantic, design and interaction checks retain their own result states. Research for additional markets can produce a scoped advisory finding, not a claim of validated regional support.
 
 ## Delivery and human-directed refinement
 

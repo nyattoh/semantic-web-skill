@@ -13,7 +13,7 @@ Interaction requirements, markup and script, state transitions, and intended nav
 
 ## Work and references
 
-Determine disclosure versus modal behavior first. Review state synchronization, keyboard operation, focus reachability, focus return, and viewport changes.
+Determine what each control does before choosing its element. For link/action choices and asynchronous form states, read the focused [operation contract](references/operation-contract.md). For disclosure versus modal behaviour, review state synchronisation, keyboard operation, focus reachability, focus return, and viewport changes.
 
 Read [navigation](references/navigation.md) when needed, then the relevant [specification sections 6–7](../../docs/product-spec.ja.md). Use the [rule-authoring contract](../../docs/rule-authoring.md); the [rule library](../../rules/README.md) is still planned. Do not treat a missing check as passed.
 

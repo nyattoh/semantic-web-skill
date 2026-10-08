@@ -12,6 +12,10 @@ These are product directions, not claims that the workflows, regional packs, or 
 A visual mock-up, as an image or a design-tool file, of a page or screen. It is the input of comp-to-HTML and the output of brief-to-comp.
 _Avoid_: mockup, wireframe, screenshot
 
+**Semantic blueprint**:
+A description of content relationships, reading order, headings, controls and states that informs the Design comp and Semantic source before layout containers are chosen. It records meanings and open decisions; a visual image alone does not establish it.
+_Avoid_: DOM outline, layout specification
+
 **Comp-to-HTML**:
 The workflow that turns an existing design comp into semantic source.
 _Avoid_: slicing, coding the design
@@ -61,7 +65,7 @@ _Avoid_: proof, screenshot
 ### Compliance
 
 **Regional pack**:
-A declared set of applicability conditions, sources and fixtures for one market. A region without a pack is unsupported, never passed.
+A declared set of applicability conditions, sources and fixtures for one market. Regional compliance coverage without a validated pack is unsupported, never passed; separately scoped semantic and design findings retain their own Result states.
 _Avoid_: locale, country rules
 
 **Claim**:

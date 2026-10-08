@@ -6,7 +6,7 @@
 
 An open project to help spread meaningful, semantic HTML source code. It aims to connect visual design and document meaning, so developers can consider content, interaction, accessibility, and intended markets whether they are translating a design into code or creating a design from a brief.
 
-[日本語版](README.ja.md) · [Product specification](docs/product-spec.ja.md) · [Current status](docs/starter-status.md) · [Contributing](CONTRIBUTING.md)
+[Quickstart](docs/quickstart.en.md) · [Static comparison](examples/semantic-comparison/README.md) · [日本語版](README.ja.md) · [Product specification](docs/product-spec.ja.md) · [Current status](docs/starter-status.md) · [Contributing](CONTRIBUTING.md)
 
 > **This repository is currently a starter containing design documents and draft skills.** It is not a completed audit tool, validated agent-skill distribution, or regional rule pack. See [current status](docs/starter-status.md) for limitations.
 
@@ -28,7 +28,7 @@ These three paths reflect the accepted [design decision, ADR 0003](docs/adr/0003
 
 ## Using this repository today
 
-For now, use the repository as a set of design documents. There is no installer or automatic execution.
+For now, use the repository as a set of design documents. Start with the [quickstart and copyable prompt](docs/quickstart.en.md), choose a route, and try the [static source comparison](examples/semantic-comparison/README.md). There is no installer or automatic execution.
 
 1. Read [current status and open decisions](docs/starter-status.md).
 2. Read the [entry skill](skills/semantic-web/SKILL.md) and only the specialist drafts relevant to your task.
@@ -56,9 +56,9 @@ The project aims to grow through real use, bug reports, and improvements to its 
 
 ## What exists today
 
-The repository contains draft entry and specialist skills, a specification, reference guides, and design notes. Structural checks do not validate skill behaviour or web quality.
+The repository contains draft entry and specialist skills, a specification, reference guides, design notes, bilingual quickstarts, and three static HTML comparison fixtures with focused documentation/fixture assertions. These checks do not validate skill behaviour or web quality.
 
-Executable audit rules, JSON schemas, a test runner, CI, an installer, working demo examples, and validated regional packs are not implemented. Agent, browser, and real-device support has not been validated. No accessibility conformance, search ranking, AI-search citations, or legal compliance is guaranteed.
+Executable audit rules, JSON schemas, a product runtime test runner, CI, an installer, validated runtime demo examples, and validated regional packs are not implemented. Agent, browser, and real-device support has not been validated. No accessibility conformance, search ranking, AI-search citations, or legal compliance is guaranteed.
 
 ## Licence
 

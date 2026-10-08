@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fixed semantic fixture — scoped correction</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 48rem; margin: 2rem auto; padding: 0 1rem; color: #20313d; }
+    .control { display: inline-block; padding: .7rem 1rem; border: 1px solid #20313d; border-radius: .3rem; background: #eff5f7; color: inherit; font: inherit; cursor: pointer; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 1rem; padding: 0; list-style: none; }
+    .card { padding: 1rem; border: 1px solid #9baeb6; }
+    textarea { display: block; width: 100%; box-sizing: border-box; margin: .8rem 0; font: inherit; }
+    dialog[open] { position: static; width: auto; margin: 1.5rem 0; padding: 1rem; border: 1px solid #9baeb6; color: inherit; }
+    :focus-visible { outline: 3px solid #154e73; outline-offset: 3px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1 id="fixture-title">A fictional local workspace</h1>
+    <p>Static fixture: scoped markup corrections. Runtime behaviour and conformance have not been verified.</p>
+    <nav aria-label="On this page">
+      <ul><li><a id="plans-link" class="control" href="#plans">View plans</a></li></ul>
+    </nav>
+    <section id="plans">
+      <h2>Plan features</h2>
+      <p>These are two unordered peer features, not unrelated layout panels.</p>
+      <ul id="features" class="cards">
+        <li class="card"><h3>Local notes</h3><p>Keep a temporary note on this page.</p></li>
+        <li class="card"><h3>Clear notes</h3><p>Clear the note in the local editor.</p></li>
+      </ul>
+    </section>
+    <dialog open aria-labelledby="note-editor-heading">
+      <h2 id="note-editor-heading">Local note editor</h2>
+      <p id="note-help">This note is temporary. It is not saved or sent anywhere. This editor is non-modal and already open.</p>
+      <!-- A local dialog form illustrates label association, not a server form. -->
+      <form id="local-editor" method="dialog">
+        <label for="local-note">Local note</label>
+        <textarea id="local-note" rows="3" aria-describedby="note-help"></textarea>
+        <button id="clear-note" class="control" type="button">Clear note</button>
+      </form>
+    </dialog>
+  </main>
+  <script>
+    // A local action only: no network request, persistence or success simulation.
+    document.getElementById('clear-note').addEventListener('click', () => {
+      document.getElementById('local-note').value = '';
+      document.getElementById('local-note').focus();
+    });
+  </script>
+</body>
+</html>
