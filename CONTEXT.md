@@ -1,6 +1,8 @@
 # semantic-web-skill
 
-A skill collection that makes coding agents produce semantic, verifiable HTML from a design comp or from nothing, so that clean markup spreads and junk markup does not.
+A skill collection intended to spread Semantic source widely. Its core paths are Comp-to-HTML and Brief-to-comp: a Design comp guides semantic HTML, or a brief leads to a comp designed with semantic structure from the outset. Review inspects existing sites. The project aims to serve as many markets as practical through sourced, scoped Regional packs; a market without a pack remains unsupported. At least 1,000 GitHub stars is an aspiration for reach, not a guarantee of quality or adoption.
+
+These are product directions, not claims that the workflows, regional packs, or Target agents have been implemented or validated. [ADR 0003](docs/adr/0003-design-comp-centered-workflows.md) records the owner's workflow decision; [starter status](docs/starter-status.md) records the amendment to the preserved product specification and the remaining decisions.
 
 ## Language
 
@@ -9,6 +11,10 @@ A skill collection that makes coding agents produce semantic, verifiable HTML fr
 **Design comp** (デザインカンプ):
 A visual mock-up, as an image or a design-tool file, of a page or screen. It is the input of comp-to-HTML and the output of brief-to-comp.
 _Avoid_: mockup, wireframe, screenshot
+
+**Semantic blueprint**:
+A description of content relationships, reading order, headings, controls and states that informs the Design comp and Semantic source before layout containers are chosen. It records meanings and open decisions; a visual image alone does not establish it.
+_Avoid_: DOM outline, layout specification
 
 **Comp-to-HTML**:
 The workflow that turns an existing design comp into semantic source.
@@ -53,13 +59,13 @@ One of passed, failed, untested, blocked, needs_review, not_applicable. No score
 _Avoid_: grade, score, pass rate
 
 **Evidence**:
-A recorded artifact that supports a result and only the scope it can support: a screenshot shows display, a DOM dump shows structure, an interaction log shows behavior.
+A recorded artefact that supports a result and only the scope it can support: a screenshot shows display, a DOM dump shows structure, an interaction log shows behaviour.
 _Avoid_: proof, screenshot
 
 ### Compliance
 
 **Regional pack**:
-A declared set of applicability conditions, sources and fixtures for one market. A region without a pack is unsupported, never passed.
+A declared set of applicability conditions, sources and fixtures for one market. Regional compliance coverage without a validated pack is unsupported, never passed; separately scoped semantic and design findings retain their own Result states.
 _Avoid_: locale, country rules
 
 **Claim**:

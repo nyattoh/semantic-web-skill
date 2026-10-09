@@ -13,9 +13,9 @@ Target audience, current support requirements, breakpoints, and available device
 
 ## Work and references
 
-Select a dated target matrix, then test ranges and boundaries alongside states. Label emulation, browser engines, and physical devices accurately.
+Select a dated target matrix, then test ranges and boundaries alongside states. When layout changes can affect sequence, read [device testing](references/device-testing.md) for the visual, DOM, and keyboard-order check. Label emulation, browser engines, and physical devices accurately.
 
-Read [device testing](references/device-testing.md) when needed, then the relevant [specification section 8](../../docs/product-spec.ja.md). Use the [rule-authoring contract](../../docs/rule-authoring.md); the [rule library](../../rules/README.md) is still planned. Do not treat a missing check as passed.
+Read the relevant [specification section 8](../../docs/product-spec.ja.md). Use the [rule-authoring contract](../../docs/rule-authoring.md); the [rule library](../../rules/README.md) is still planned. Do not treat a missing check as passed.
 
 ## Output
 

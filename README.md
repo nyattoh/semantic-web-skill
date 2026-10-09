@@ -6,7 +6,7 @@
 
 An open project to help spread meaningful, semantic HTML source code. It aims to connect visual design and document meaning, so developers can consider content, interaction, accessibility, and intended markets whether they are translating a design into code or creating a design from a brief.
 
-[日本語版](README.ja.md) · [Product specification](docs/product-spec.ja.md) · [Current status](docs/starter-status.md) · [Contributing](CONTRIBUTING.md)
+[Quickstart](docs/quickstart.en.md) · [Static comparison](examples/semantic-comparison/README.md) · [日本語版](README.ja.md) · [Product specification](docs/product-spec.ja.md) · [Current status](docs/starter-status.md) · [Contributing](CONTRIBUTING.md)
 
 > **This repository is currently a starter containing design documents and draft skills.** It is not a completed audit tool, validated agent-skill distribution, or regional rule pack. See [current status](docs/starter-status.md) for limitations.
 
@@ -24,11 +24,46 @@ When no comp exists, clarify the purpose, audience, content, brand, interactions
 
 Inspect its code, rendered pages, and interactions. Report improvement opportunities with sources and actual verification results. A review request does not authorise code changes or publication by itself.
 
-These three paths reflect the accepted [design decision, ADR 0003](docs/adr/0003-design-comp-centered-workflows.md). The product specification and entry skill have not yet been updated to describe all three paths. Input formats (such as images or Figma) and agent-specific execution remain undecided or unvalidated.
+These three paths reflect the accepted [design decision, ADR 0003](docs/adr/0003-design-comp-centered-workflows.md). The entry skill now describes all three paths as draft guidance. The product specification remains preserved; its amendment is recorded in [current status](docs/starter-status.md). Input formats (such as images or Figma), agent-specific execution, and runtime behaviour remain undecided or unvalidated.
+
+## Carry every request into implementation
+
+For a build, the entry skill turns each explicit requirement and prohibition into one coverage row: the requested wording/value, target region or state, implementation, observable check, and result state. This prevents details such as a motion direction, a fixed arrow, a specific link, or a mobile layout from disappearing inside a general design summary. The ledger is not a quality score; a requirement remains unresolved until its check passes or is honestly marked `untested`, `blocked`, or `needs_review`.
+
+The supplied Sass pattern compiles to ordinary CSS like this:
+
+```css
+.textlink_border_type3 {
+  position: relative;
+  display: inline-block;
+}
+
+.textlink_border_type3::after {
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  content: "";
+  background: #222;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform 0.3s ease;
+}
+
+.textlink_border_type3:hover::after,
+.textlink_border_type3:focus-visible::after {
+  transform: scale(1, 1);
+}
+```
+
+When a link also has an arrow, apply the underline to a text-only label or shorten its width so the arrow stays outside it. Check the actual gap and arrow position. Sample the intermediate transform on hover and focus; a final screenshot alone does not prove the transition ran. Under reduced-motion settings, shorten or remove the transition without resetting the collapsed base transform.
+
+Use formulae only for measurable constraints. WCAG's contrast ratio is `(L1 + 0.05) / (L2 + 0.05)`, where `L1` and `L2` are the lighter and darker relative luminances; the applicable target still comes from the requested evaluation scope ([W3C guidance](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)). Fluid sizing can use `clamp(min, preferred, max)` when the design defines bounds; CSS defines it as the preferred value limited by those bounds ([CSS Values and Units](https://www.w3.org/TR/css-values-4/#comp-func)). These calculations do not turn semantic choices, copy quality, or overall design into a numeric score.
 
 ## Using this repository today
 
-For now, use the repository as a set of design documents. There is no installer or automatic execution.
+For now, use the repository as a set of design documents. Start with the [quickstart and copyable prompt](docs/quickstart.en.md), choose a route, and try the [static source comparison](examples/semantic-comparison/README.md). There is no installer or automatic execution.
 
 1. Read [current status and open decisions](docs/starter-status.md).
 2. Read the [entry skill](skills/semantic-web/SKILL.md) and only the specialist drafts relevant to your task.
@@ -56,9 +91,9 @@ The project aims to grow through real use, bug reports, and improvements to its 
 
 ## What exists today
 
-The repository contains draft entry and specialist skills, a specification, reference guides, and design notes. Structural checks do not validate skill behaviour or web quality.
+The repository contains draft entry and specialist skills, a specification, reference guides, design notes, bilingual quickstarts, three static HTML comparison fixtures, focused documentation/fixture assertions, and one draft forward-evaluation case. The case has not yet been run. The existing checks do not validate skill behaviour or web quality.
 
-Executable audit rules, JSON schemas, a test runner, CI, an installer, working demo examples, and validated regional packs are not implemented. Agent, browser, and real-device support has not been validated. No accessibility conformance, search ranking, AI-search citations, or legal compliance is guaranteed.
+Executable audit rules, JSON schemas, a product runtime test runner, CI, an installer, validated runtime demo examples, and validated regional packs are not implemented. Agent, browser, and real-device support has not been validated. No accessibility conformance, search ranking, AI-search citations, or legal compliance is guaranteed.
 
 ## Licence
 

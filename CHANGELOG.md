@@ -1,8 +1,13 @@
 # Changelog
 
-## Unreleased — remove stale internal docs
+## Unreleased — guidance and onboarding, 2026-10-09 JST
 
-- Removed the ChatGPT handover prompt and the obsolete GitHub setup guide. They described an unpushed repository.
+- Added Japanese and UK-English quickstarts and three static semantic comparison fixtures.
+- Added narrowly scoped documentation/fixture tests; these do not validate agent behaviour, HTML/WCAG conformance or regional support.
+- Clarified operation intent, asynchronous form states and meaningful responsive reading/focus order checks.
+- Removed the ChatGPT handover prompt, the obsolete GitHub setup guide, and the internal skill-comparison and differentiation notes.
+- Defined Semantic blueprint and clarified that unsupported regional compliance coverage does not replace separately scoped semantic/design result states.
+- Kept desktop/SaaS implementation out of this branch; the separate concept branch contains only a proposal document.
 
 ## Unreleased — documentation starter, 2026-10-08 UTC
 
