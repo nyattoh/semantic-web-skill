@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased — remove stale internal docs
+
+- Removed the ChatGPT handover prompt and the obsolete GitHub setup guide. They described an unpushed repository.
+
 ## Unreleased — documentation starter, 2026-10-08 UTC
 
 - Preserved the Japanese product specification without changes.

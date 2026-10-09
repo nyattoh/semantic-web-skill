@@ -21,10 +21,8 @@ semantic-web-skill/
   docs/adr/0002-legal-judgment-is-an-advisory-finding.md
   docs/adr/0003-design-comp-centered-workflows.md
   docs/architecture.md
-  docs/chat-handover.ja.md
   docs/compatibility.md
   docs/file-map.md
-  docs/github-setup.ja.md
   docs/handover.md
   docs/product-spec.ja.md
   docs/reference/README.md
