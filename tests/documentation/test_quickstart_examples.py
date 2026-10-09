@@ -87,7 +87,16 @@ class QuickstartDocumentationTests(unittest.TestCase):
             self.assertEqual(len(set(descriptions)), len(STATES))
 
     def test_relative_document_links_resolve(self):
-        paths = [*QUICKSTARTS, EXAMPLES / "README.md", ROOT / "examples/README.md", ROOT / "tests/README.md", ROOT / "docs/starter-status.md"]
+        paths = [
+            *QUICKSTARTS,
+            ROOT / "README.md",
+            ROOT / "README.ja.md",
+            EXAMPLES / "README.md",
+            ROOT / "examples/README.md",
+            ROOT / "tests/README.md",
+            ROOT / "tests/evaluations/README.md",
+            ROOT / "docs/starter-status.md",
+        ]
         for path in paths:
             text = path.read_text(encoding="utf-8")
             for target in re.findall(r"\[[^\]]+\]\(([^)]+)\)", text):

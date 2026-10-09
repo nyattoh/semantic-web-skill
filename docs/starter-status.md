@@ -4,7 +4,7 @@
 
 This archive supplies human-readable documentation, nine structurally checkable SKILL.md drafts, and an organised development starting point. Local packaging checks establish file integrity and link/frontmatter structure only; they do not establish agent behaviour, browser support, or web-quality results.
 
-Also available: [JA quickstart](quickstart.ja.md), [UK-English quickstart](quickstart.en.md), and [three static HTML comparison fixtures](../examples/semantic-comparison/README.md) with focused assertions in `tests/documentation/test_quickstart_examples.py`. [Test instructions](../tests/README.md) distinguish static documentation/fixture checks from runtime checks. These local checks inspect authored tags, attributes and documented contracts; they do not implement an audit engine or validate host behaviour, HTML/WCAG conformance or product quality. Interaction/responsive documentation checks are separately scoped.
+Also available: [JA quickstart](quickstart.ja.md), [UK-English quickstart](quickstart.en.md), [three static HTML comparison fixtures](../examples/semantic-comparison/README.md) with focused assertions in `tests/documentation/test_quickstart_examples.py`, and one [draft semantic first-pass evaluation case](../tests/evaluations/semantic-first-pass-smoke.md). That evaluation case has not been run. [Test instructions](../tests/README.md) distinguish static documentation/fixture checks from runtime checks. These local checks inspect authored tags, attributes and documented contracts; they do not implement an audit engine or validate host behaviour, HTML/WCAG conformance or product quality. Interaction/responsive documentation checks are separately scoped.
 
 ## Not implemented or validated
 

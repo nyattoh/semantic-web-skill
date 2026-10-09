@@ -1,5 +1,7 @@
-# Evaluations — planned
+# Evaluations
 
-Use held-out tasks, comparable input/model/settings/budgets, real baselines, and observable outcomes. Do not fabricate improvement rates or cherry-pick unrealistic negative examples.
+Use realistic held-out tasks and observable outcomes. Record the exact host, model, input, limits, and artifacts; one run is evidence for that run, not a general quality claim. Do not invent improvement rates or cherry-pick negative examples.
 
-No tests or results are implemented. Read the [test-status guide](../README.md).
+- [Semantic first-pass smoke case](semantic-first-pass-smoke.md): a draft task for checking whether explicit design, content, motion, and verification requirements survive a comp-to-HTML request. A case description is not a run result.
+
+No general evaluation runner or validated host-behaviour suite exists. Read the [test-status guide](../README.md).

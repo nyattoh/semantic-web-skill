@@ -28,3 +28,5 @@ The separately owned `test_interaction_guidance.py` checks interaction/responsiv
 ## Future behavioural tests
 
 Implement meaningful invariants tied to sourced rules, with positive, negative, boundary and non-applicable inputs. Record actual environment, steps and output; text matching cannot substitute for behaviour checks. [Specification sections 12–13](../docs/product-spec.ja.md) define the intended approach. Never infer full accessibility, legal compliance or physical-device behaviour from one automated tool.
+
+One draft [semantic first-pass smoke case](evaluations/semantic-first-pass-smoke.md) records previously missed visual, content and interaction requirements. It is an evaluation prompt and rubric, not an executable test or a validated host result. No run has been recorded.

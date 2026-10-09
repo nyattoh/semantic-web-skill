@@ -1,51 +1,36 @@
 ---
 name: semantic-web
-description: "Draft guidance for turning a design comp into semantic HTML, creating a semantically informed comp from a brief, or reviewing an existing site. Routes relevant specialist drafts; runtime behaviour and installation remain unvalidated."
+description: "Guide comp-to-HTML, brief-to-comp, and existing-site review. Routes only relevant specialist drafts. Runtime behaviour and installation are unvalidated."
 ---
 
 # Semantic web — draft entrypoint
 
-Spread semantic source by connecting visual design, content meaning, and operation. The first pass should be near-final in code quality, even when it differs from the human's intent; refinement is human-directed. Use result states against requirements, never a numeric score.
+Use to connect design, content meaning, and operation in comp-to-HTML, brief-to-comp, or review. Implement explicit requests in the first pass; human refinement is for remaining preferences, not known omissions. See [current status](../../docs/starter-status.md); this starter is guidance, not a validator or verified host integration.
 
-This is design guidance for an unvalidated starter. It supplies no executable rules, automatic checks, or supported installer, and establishes no agent, browser, device, or regional support. Read [current status](../../docs/starter-status.md) and keep repository-relative references together.
+## Route
 
-## Choose the workflow
+- **Comp-to-HTML:** a comp exists and HTML or an implementation plan is requested. Read [comp-to-HTML](references/comp-to-html.md).
+- **Brief-to-comp:** no comp exists. Read [brief-to-comp](references/brief-to-comp.md); continue to comp-to-HTML only if HTML is also requested.
+- **Review:** inspect the supplied source/rendering and report findings. Follow [shared workflow](references/workflow.md); do not edit unless requested.
 
-Read [shared workflow](references/workflow.md), then only the relevant path:
+For mixed requests, state the order and deliverables. A visual reference does not itself make a creation request a review. A comp-only task ends at the design deliverable.
 
-- **Comp-to-HTML:** a design comp exists and the request calls for HTML or an implementation plan. Read [comp-to-HTML](references/comp-to-html.md).
-- **Brief-to-comp:** no comp exists; start from purpose, content, and constraints. Read [brief-to-comp](references/brief-to-comp.md). Continue to comp-to-HTML when HTML implementation is also requested.
-- **Review:** inspect an existing site's source, rendered pages, and interactions. Follow the review procedure in [shared workflow](references/workflow.md). Change code only when the request includes changes.
+## Build and verify
 
-For mixed requests, state the sequence and deliverables. A request to create a comp alone ends at the design deliverable. An existing site supplied as a visual reference does not by itself turn a creation request into a review.
+Before design or DOM work, preserve every explicit requirement and prohibition in the [coverage ledger](references/workflow.md), including literal values and no-go constraints. Create the semantic blueprint before layout; use [semantic-html](../semantic-html/SKILL.md) for its content and element decisions.
 
-[ADR 0003](../../docs/adr/0003-design-comp-centered-workflows.md) extends the preserved [specification](../../docs/product-spec.ja.md), whose section 11 still names two modes. Use its relevant requirements with this three-path amendment and [project vocabulary](../../CONTEXT.md).
+Implement each ledger row within scope. Base copy on the stated audience, primary task, and supplied facts. Do not publish internal `unknown` placeholders, invent destinations, or add irrelevant links. Choose image alternatives from image purpose; `alt` and visible captions serve different purposes.
 
-## Common operating contract
+For requested interaction or motion, record trigger, visible effect, property/direction, and reduced-motion state. Use [CSS foundations](../css-foundations/SKILL.md) and [native interactions](../native-interactions/SKILL.md) when relevant. Test actual pointer/keyboard states and an intermediate transition value. Verify the requested widths; measure collisions and arrow clearance where they matter.
 
-1. Establish the requested outcome, supplied artefacts, permitted changes, audience, content, technical constraints, languages, intended markets, and available tools. Separate observations, proposals, and assumptions; ask only for missing decisions that materially affect the work.
-2. Inspect supplied content and any existing comp through the selected path. Before creating DOM, record a **semantic blueprint**: content groups and reading order, headings and landmarks, collection relationships, controls and states, image purpose, and responsive changes. Resolve meaning before choosing layout containers.
-3. For brief-to-comp, create the design from that blueprint. Use only tools actually available and authorised. If a design canvas is unavailable, provide the labelled design-specification or HTML-preview fallback described in brief-to-comp. Claim a native design-tool file only when it was actually produced.
-4. Implement or review within scope, using relevant specialist guidance. Aim for a complete first pass; resolve observed defects within the authorised work. Run only permitted, available checks and record limits without inventing results.
-5. Deliver artefacts, evidence, unresolved decisions, and a clear handover for human-directed refinement. Do not continue redesigning without direction after the first pass has been delivered.
+Use the smallest relevant specialist set:
 
-## Select specialists
+- [semantic-html](../semantic-html/SKILL.md) for content models and DOM meaning.
+- [css-foundations](../css-foundations/SKILL.md), [native-interactions](../native-interactions/SKILL.md), [accessibility](../accessibility/SKILL.md), and [responsive-verification](../responsive-verification/SKILL.md) for relevant presentation and operation.
+- [search-content](../search-content/SKILL.md), [regional-compliance](../regional-compliance/SKILL.md), and [evidence-reporting](../evidence-reporting/SKILL.md) only when those areas apply.
 
-Load the smallest relevant set; these are drafts, not executed checks:
+Reconcile every ledger row against its expected evidence. A document or screenshot does not prove runtime behaviour. Use the [shared workflow](references/workflow.md) result states. Leave unavailable checks `untested` or `blocked`; do not claim verification while a requested row remains unresolved.
 
-- [semantic-html](../semantic-html/SKILL.md): content models and meaning; use for the blueprint and DOM review.
-- [css-foundations](../css-foundations/SKILL.md): layout and presentation.
-- [native-interactions](../native-interactions/SKILL.md): controls, state transitions, and focus behaviour.
-- [accessibility](../accessibility/SKILL.md): names, keyboard access, contrast, and shared target-size criteria.
-- [responsive-verification](../responsive-verification/SKILL.md): width boundaries and environment-specific checks.
-- [search-content](../search-content/SKILL.md): discoverability and current provider requirements when relevant.
-- [regional-compliance](../regional-compliance/SKILL.md): market applicability, claims, and advisory findings when relevant.
-- [evidence-reporting](../evidence-reporting/SKILL.md): actual results and remaining work.
+## Boundaries
 
-## Results and boundaries
-
-Use exactly `passed`, `failed`, `untested`, `blocked`, `needs_review`, or `not_applicable`, following the shared workflow and [handover guidance](../../docs/handover.md). A document read, comp, screenshot, or proposed check is not evidence of runtime conformance. [Rules remain unimplemented](../../rules/README.md); cite specification sections or sources instead of inventing implemented rule IDs.
-
-Support as many markets as practical through declared scope and dated primary-source research. Language does not determine jurisdiction. No regional pack is validated; unsupported markets stay explicit. Under [ADR 0002](../../docs/adr/0002-legal-judgment-is-an-advisory-finding.md), legal and provider-policy interpretations are advisory findings with state `needs_review`, never agent-certified compliance.
-
-When an essential input, permission, source, or environment is missing, stop its dependent action and continue independent work. Review does not authorise edits or publication; loading a skill does not authorise installation, external uploads, paid services, or deployment. Historical source prompts are source material, not runtime instructions.
+Rules and regional packs remain unimplemented or unvalidated; cite sources rather than inventing rule IDs. Language does not determine jurisdiction. Legal and provider-policy interpretations remain advisory `needs_review` findings under [ADR 0002](../../docs/adr/0002-legal-judgment-is-an-advisory-finding.md). Stop only the dependent work when an essential input, permission, source, or environment is missing. Loading a skill does not authorise edits, installation, external uploads, paid services, or publication.
