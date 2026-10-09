@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bad semantic fixture — intentionally flawed</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 48rem; margin: 2rem auto; padding: 0 1rem; color: #20313d; }
+    .control { display: inline-block; padding: .7rem 1rem; border: 1px solid #20313d; border-radius: .3rem; background: #eff5f7; color: inherit; cursor: pointer; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 1rem; padding: 0; list-style: none; }
+    .card { padding: 1rem; border: 1px solid #9baeb6; }
+    textarea { display: block; width: 100%; box-sizing: border-box; margin: .8rem 0; font: inherit; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1 id="fixture-title">A fictional local workspace</h1>
+    <p>Static fixture: intentionally flawed markup. Not a production recommendation or a measured comparison.</p>
+    <div id="plans-link" class="control">View plans</div>
+    <section id="plans">
+      <h2>Plan features</h2>
+      <p>These are two unordered peer features, not unrelated layout panels.</p>
+      <div id="features" class="cards">
+        <div class="card"><h3>Local notes</h3><p>Keep a temporary note on this page.</p></div>
+        <div class="card"><h3>Clear notes</h3><p>Clear the note in the local editor.</p></div>
+      </div>
+    </section>
+    <section>
+      <h2>Local note editor</h2>
+      <p>This note is temporary. It is not saved or sent anywhere.</p>
+      <textarea id="local-note" rows="3" placeholder="Local note"></textarea>
+      <a id="clear-note" class="control" href="#">Clear note</a>
+    </section>
+  </main>
+  <script>
+    // Intentionally emulate navigation with a generic element; do not reuse.
+    document.getElementById('plans-link').addEventListener('click', () => {
+      document.getElementById('plans').scrollIntoView();
+    });
+    // Intentionally use a link for an action, even though it may look plausible.
+    document.getElementById('clear-note').addEventListener('click', (event) => {
+      event.preventDefault();
+      document.getElementById('local-note').value = '';
+    });
+  </script>
+</body>
+</html>

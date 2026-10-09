@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Boundary semantic fixture — independent regions and unknown endpoint</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 48rem; margin: 2rem auto; padding: 0 1rem; color: #20313d; }
+    .layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 1rem; }
+    .panel { padding: 1rem; border: 1px solid #9baeb6; }
+    textarea { display: block; width: 100%; box-sizing: border-box; margin: .8rem 0; font: inherit; }
+    button { padding: .7rem 1rem; font: inherit; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1 id="fixture-title">Boundary cases: meaning before layout</h1>
+    <p>Static fixture: fictional content, independent regions and a deliberately inactive enquiry preview.</p>
+    <!-- This div exists only for layout; these regions are not a collection. -->
+    <div id="independent-layout" class="layout">
+      <section class="panel">
+        <h2>Document purpose</h2>
+        <p>This local document illustrates source decisions. It offers no commercial service.</p>
+      </section>
+      <section class="panel">
+        <h2>Enquiry preview</h2>
+        <p id="endpoint-status">blocked: the owner has not supplied an endpoint, required fields or a submission contract. Nothing can be submitted.</p>
+        <!-- No form or invented action URL; not a connected enquiry workflow. -->
+        <fieldset id="enquiry-preview" disabled aria-describedby="endpoint-status">
+          <legend>Inactive illustrative field</legend>
+          <label for="enquiry">Enquiry (illustrative wording, not confirmed requirements)</label>
+          <textarea id="enquiry" rows="3"></textarea>
+          <button id="send-enquiry" type="button" disabled>Send enquiry — unavailable</button>
+        </fieldset>
+      </section>
+    </div>
+    <p>The owner must confirm the endpoint, data, consent, validation and error/success contract before a connected form can be implemented.</p>
+  </main>
+</body>
+</html>

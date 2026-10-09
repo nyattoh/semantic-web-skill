@@ -17,7 +17,7 @@ Check current primary provider sources for time-sensitive requirements. Keep sea
 
 Read [provider checks](references/provider-checks.md) when needed, then the relevant [specification section 9](../../docs/product-spec.ja.md). Use the [rule-authoring contract](../../docs/rule-authoring.md); the [rule library](../../rules/README.md) is still planned. Do not treat a missing check as passed.
 
-For page descriptions, Open Graph, X cards or JSON-LD, read [page metadata](references/page-metadata.md). Match values to visible content, verify the delivered head and JSON, and report unknown public URLs as `needs_review`; do not ship fabricated URL placeholders. Structured data supplements semantic HTML and does not guarantee search or sharing outcomes.
+For page descriptions, Open Graph, X cards, favicons, home-screen icons or JSON-LD, read [page metadata](references/page-metadata.md). For icons, first research the requested OS/browser and display-context specifications from current primary sources; record target versions, source URLs and retrieval dates before selecting formats and sizes. Match values to visible content, verify the delivered head and JSON, and report unknown public URLs as `needs_review`; do not ship fabricated URL placeholders. Treat browser favicons, Apple home-screen icons, manifest icons and Safari pinned-tab icons as separate display contexts. Icon and manifest files alone do not prove installability or offline support. Structured data supplements semantic HTML and does not guarantee search or sharing outcomes.
 
 ## Output
 

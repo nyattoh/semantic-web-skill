@@ -16,6 +16,15 @@ Keep an assumption list with the choice, reason, effect, and who can confirm it.
 
 Inspect the actual environment before selecting methods. A browser, design canvas, validator, assistive technology, or physical device mentioned in the specification is a candidate, not an installed capability. Use existing authorised tools; a missing canvas can use the brief-to-comp fallback. Label a missing environment for a required check as `blocked`; a check not attempted as `untested`.
 
+## Request coverage
+
+For a build, copy every explicit user requirement and prohibition into a compact ledger before design or code. Preserve literal copy, URLs, directions, timings, and no-go constraints. Map each row to a target region/state, implementation, and an observable check with its expected result:
+
+| Request | Target/state | Implementation | Check and expected result | Result state |
+|---|---|---|---|---|
+
+Include only relevant rows, but do not omit a requested item because it seems cosmetic. For interaction or motion, name the trigger, visible effect, affected property, direction and reduced-motion behavior. If text sits beside an icon, verify the line's measured clearance and whether the icon moves. For copy, name the audience and task; check visible text and destinations against supplied facts. The ledger carries intent into implementation and reconciliation, not a quality score.
+
 ## Semantic blueprint before DOM
 
 Write a short outline or mapping alongside the design. Each group should identify:
@@ -45,11 +54,11 @@ For review:
 
 ## Checks and evidence
 
-Choose applicable checks from the request and specialist drafts, using tools actually available. For a design-only delivery, check the design specification/comp itself; future DOM and runtime checks remain separate, usually `untested`. Do not claim keyboard or assistive-technology support from annotations.
+Reconcile every ledger row with its artifact and check. Run applicable checks from the request and specialist drafts with tools actually available. For a design-only delivery, check the design specification/comp itself; future DOM and runtime checks remain separate, usually `untested`. Do not silently skip a row or claim keyboard/assistive-technology support from annotations.
 
 - **Structure:** inspect the resulting DOM, headings, landmarks, collections, element placement, nested interactive content, labels, and image alternatives. Use an available validator when permitted; record semantic judgements separately from parser results.
 - **Visual and responsive:** inspect actual rendered output against the comp or design specification at agreed widths and key states. Check hierarchy, typography, spacing, assets, overflow, long/translated text, and fonts. Explore breakpoint edges, zoom, orientation, and input changes; record intentional departures. A single image cannot establish responsive behaviour.
-- **Interaction:** exercise navigation, disclosures, dialogs, and forms with the applicable keyboard and pointer/touch methods. Check open/close transitions, hidden content's focus reachability, focus return, submission/error states, and state after viewport changes.
+- **Interaction:** exercise navigation, disclosures, dialogs, and forms with the applicable keyboard and pointer/touch methods. Check open/close transitions, hidden content's focus reachability, focus return, submission/error states, and state after viewport changes. When a transition is requested, inspect its base and active state and an intermediate computed value; a final screenshot alone does not prove that it ran.
 - **Accessibility:** inspect names, roles, states, keyboard order, visible/unobscured focus, contrast, reflow, and actual hit areas against the [accessibility-owned criteria](../../accessibility/SKILL.md). Use assistive technology when available and in scope. Separate automated output from manual tasks.
 - **Content and markets:** when applicable, inspect claims, disclosures, translations, and visible/metadata consistency. Use [regional-compliance](../../regional-compliance/SKILL.md) and [search-content](../../search-content/SKILL.md) for dated research. Follow ADR 0002 for advisory findings.
 
@@ -68,7 +77,7 @@ Use one of the six states for each applicable requirement or proposed check, wit
 - `needs_review`: interpretation or a human decision remains; identify the reviewer role and question. Agent legal/provider-policy interpretations always use this state with sources and retrieval date.
 - `not_applicable`: the condition does not apply; state the applicability reason. Missing evidence or an unsupported market is not an applicability exemption.
 
-Where no implemented rule ID exists, reference the specification section or primary source and label the proposed check; do not invent an executable rule, schema, or automatic result. Keep exceptions separate from observed failures. A market without a declared regional pack is unsupported; this starter has no validated pack. Research for additional markets can produce a scoped advisory finding, not a claim of validated regional support.
+Where no implemented rule ID exists, reference the specification section or primary source and label the proposed check; do not invent an executable rule, schema, or automatic result. Keep exceptions separate from observed failures. Regional compliance coverage without a validated regional pack is unsupported; this starter has no validated pack. Separately scoped semantic, design and interaction checks retain their own result states. Research for additional markets can produce a scoped advisory finding, not a claim of validated regional support.
 
 ## Delivery and human-directed refinement
 
