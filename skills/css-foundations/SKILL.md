@@ -19,9 +19,7 @@ Read [layout and units](references/layout-and-units.md) when needed, then the re
 
 ## Hover and focus transitions
 
-For hover and keyboard-focus effects, declare `transition` on the base selector and include each visual property that should animate. Use compatible computed value types at both ends so the browser can interpolate them. For example, `background-size: 0% 1px` to `100% 1px` is interpolable; a unitless or pixel zero to a percentage may change discretely. If the effect changes `background-position`, include it in the transition as well.
-
-Check an intermediate computed value in a browser while the pointer or keyboard focus is active. A final-state screenshot alone does not show that the transition ran. Keep motion brief, provide a visible `:focus-visible` state, and respect `prefers-reduced-motion`.
+For hover and keyboard-focus effects, declare `transition` on the base selector and include each visual property that should animate. For underline reveals, a pseudo-element using `transform: scaleX(0)` to `scaleX(1)` with `transform-origin: left` reveals the line from left to right; put `transition: transform ...` on that base pseudo-element. If using `background-size` instead, use compatible computed value types at both ends, such as `0% 1px` to `100% 1px`; a unitless or pixel zero to a percentage may change discretely. Check an intermediate computed value in a browser while the pointer or keyboard focus is active. A final-state screenshot alone does not show that the transition ran. Keep motion brief, provide a visible `:focus-visible` state, and respect `prefers-reduced-motion`.
 
 ## Output
 
