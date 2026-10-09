@@ -29,3 +29,5 @@ Desktop.ini
 .ruff_cache/
 # Historical source prompt: kept locally, not published (rights unconfirmed)
 docs/reference/web_spec.original.md
+# Local agent session transcripts
+.specstory/

@@ -5,7 +5,7 @@
 - Added Japanese and UK-English quickstarts and three static semantic comparison fixtures.
 - Added narrowly scoped documentation/fixture tests; these do not validate agent behaviour, HTML/WCAG conformance or regional support.
 - Clarified operation intent, asynchronous form states and meaningful responsive reading/focus order checks.
-- Added a dated seven-repository comparison and a sourced differentiation/adoption proposal.
+- Removed the ChatGPT handover prompt, the obsolete GitHub setup guide, and the internal skill-comparison and differentiation notes.
 - Defined Semantic blueprint and clarified that unsupported regional compliance coverage does not replace separately scoped semantic/design result states.
 - Kept desktop/SaaS implementation out of this branch; the separate concept branch contains only a proposal document.
 
