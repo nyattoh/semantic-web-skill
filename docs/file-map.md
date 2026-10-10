@@ -1,6 +1,6 @@
 # Actual starter file map
 
-This list describes supplied files. The larger tree in the product specification is planned; LICENSE, JSON schemas/profiles, executable scripts, demos, and CI are deliberately absent.
+This list describes supplied files. The larger tree in the product specification is planned; JSON schemas/profiles, executable scripts, demos, and CI are deliberately absent.
 
 ```text
 semantic-web-skill/
