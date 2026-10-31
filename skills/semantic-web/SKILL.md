@@ -21,7 +21,7 @@ Before design or DOM work, preserve every explicit requirement and prohibition i
 
 Implement each ledger row within scope. Base copy on the stated audience, primary task, and supplied facts. Do not publish internal `unknown` placeholders, invent destinations, or add irrelevant links. Choose image alternatives from image purpose; `alt` and visible captions serve different purposes.
 
-For requested interaction or motion, record trigger, visible effect, property/direction, and reduced-motion state. Use [CSS foundations](../css-foundations/SKILL.md) and [native interactions](../native-interactions/SKILL.md) when relevant. Test actual pointer/keyboard states and an intermediate transition value. Verify the requested widths; measure collisions and arrow clearance where they matter.
+When requirements are gathered, ask whether animation is always on, follows OS `prefers-reduced-motion`, or has an on-site toggle. If unanswered, suppression is off (animation enabled); apply reduced-motion only when the user chooses it. For requested interaction or motion, record trigger, visible effect, property/direction, duration/easing, and reduced-motion policy, then verify the states in a browser. Use [CSS foundations](../css-foundations/SKILL.md) and [native interactions](../native-interactions/SKILL.md) when relevant. Test actual pointer/keyboard states and an intermediate transition value. Verify the requested widths; measure collisions and arrow clearance where they matter.
 
 Use the smallest relevant specialist set:
 

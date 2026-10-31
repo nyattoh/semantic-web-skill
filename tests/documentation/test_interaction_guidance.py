@@ -96,6 +96,21 @@ class InteractionGuidanceTests(unittest.TestCase):
         self.assertIn("static examples", responsive)
         self.assertIn("do not establish", responsive)
 
+    def test_motion_policy_is_asked_and_defaults_to_animation_enabled(self):
+        for path in ("skills/semantic-web/SKILL.md", "skills/semantic-web/references/workflow.md"):
+            text = (ROOT / path).read_text(encoding="utf-8").lower()
+            for phrase in ("always on", "prefers-reduced-motion", "on-site toggle", "animation enabled", "reduced-motion policy"):
+                with self.subTest(path=path, phrase=phrase):
+                    self.assertIn(phrase, text)
+        for path in ("README.md", "README.ja.md"):
+            text = (ROOT / path).read_text(encoding="utf-8")
+            with self.subTest(path=path):
+                self.assertIn("prefers-reduced-motion", text)
+        smoke = (ROOT / "tests/evaluations/semantic-first-pass-smoke.md").read_text(encoding="utf-8").lower()
+        for phrase in ("animation policy is not specified", "animation enabled", "asks"):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, smoke)
+
 
 if __name__ == "__main__":
     unittest.main()

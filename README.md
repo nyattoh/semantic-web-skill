@@ -28,7 +28,7 @@ These three paths reflect the accepted [design decision, ADR 0003](docs/adr/0003
 
 ## Carry every request into implementation
 
-For a build, the entry skill turns each explicit requirement and prohibition into one coverage row: the requested wording/value, target region or state, implementation, observable check, and result state. This prevents details such as a motion direction, a fixed arrow, a specific link, or a mobile layout from disappearing inside a general design summary. The ledger is not a quality score; a requirement remains unresolved until its check passes or is honestly marked `untested`, `blocked`, or `needs_review`.
+For a build, the entry skill turns each explicit requirement and prohibition into one coverage row: the requested wording/value, target region or state, implementation, observable check, and result state. This prevents details such as a motion direction, a fixed arrow, a specific link, or a mobile layout from disappearing inside a general design summary. The ledger is not a quality score; Requirements gathering asks whether animation is always on, follows `prefers-reduced-motion`, or has an on-site toggle; the default is animation enabled. A requirement remains unresolved until its check passes or is honestly marked `untested`, `blocked`, or `needs_review`.
 
 The supplied Sass pattern compiles to ordinary CSS like this:
 
