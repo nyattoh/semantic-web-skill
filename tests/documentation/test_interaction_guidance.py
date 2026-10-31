@@ -96,6 +96,47 @@ class InteractionGuidanceTests(unittest.TestCase):
         self.assertIn("static examples", responsive)
         self.assertIn("do not establish", responsive)
 
+    def test_motion_policy_is_asked_and_defaults_to_prefers_reduced_motion(self):
+        default = re.compile(r"if unanswered[^.]*\bfollow(?:s|ing)? `prefers-reduced-motion`")
+        for path in ("skills/semantic-web/SKILL.md", "skills/semantic-web/references/workflow.md"):
+            text = (ROOT / path).read_text(encoding="utf-8").lower()
+            for phrase in ("always on", "prefers-reduced-motion", "on-site toggle", "collapsed base state", "unsuppressed only when the user", "reduced-motion policy"):
+                with self.subTest(path=path, phrase=phrase):
+                    self.assertIn(phrase, text)
+            with self.subTest(path=path, check="default"):
+                self.assertRegex(text, default)
+        readme = (ROOT / "README.md").read_text(encoding="utf-8").lower()
+        self.assertIn("on-site toggle", readme)
+        self.assertRegex(readme, default)
+        readme_ja = (ROOT / "README.ja.md").read_text(encoding="utf-8")
+        self.assertIn("サイト内切替", readme_ja)
+        self.assertIn("未指定なら `prefers-reduced-motion` に従う", readme_ja)
+        smoke = (ROOT / "tests/evaluations/semantic-first-pass-smoke.md").read_text(encoding="utf-8").lower()
+        for phrase in (
+            "animation policy is not specified",
+            "asks whether animation is always on",
+            "with no answer it records the default of following `prefers-reduced-motion`",
+            "collapsed base state is preserved",
+            "without the full-duration transition",
+            "only a variant prompt that chooses always on",
+        ):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, smoke)
+
+    def test_old_animation_enabled_default_does_not_return(self):
+        stale = ("animation enabled", "suppression is off", "suppression off", "does not apply a `prefers-reduced-motion` override", "抑制しない（アニメーション有効）", "アニメーション有効")
+        for path in (
+            "README.md",
+            "README.ja.md",
+            "skills/semantic-web/SKILL.md",
+            "skills/semantic-web/references/workflow.md",
+            "tests/evaluations/semantic-first-pass-smoke.md",
+        ):
+            text = (ROOT / path).read_text(encoding="utf-8").lower()
+            for phrase in stale:
+                with self.subTest(path=path, phrase=phrase):
+                    self.assertNotIn(phrase, text)
+
 
 if __name__ == "__main__":
     unittest.main()
